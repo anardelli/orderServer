@@ -74,12 +74,12 @@ function calcAmount(req) {
     return new Promise((resolve, reject) => {
         orderSchema.aggregate(
             [
-                { $match: { customerId: req.customerId } },
+                { $match: { orderId: req.orderId } },
+                { $unwind: "$dishes" },
                 {
-                    $group:
+                    $project:
                     {
-                        "_id": "$customerId",
-                        averageCost: { $avg: "$total_amount" }
+                        averageCost: { $avg: "$dishes.price" }
                     }
                 }
             ]

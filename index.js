@@ -1,9 +1,12 @@
 /**
  * library imports
  */
+require ('dotenv/config');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+
+console.log('MONGODB URL - ',process.env.MONGODB_URL);
 
 /**
  * configuration imports

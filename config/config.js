@@ -1,6 +1,8 @@
+require ('dotenv/config');
+
 const config = {
-    mongoUrl: 'mongodb://localhost:27017/orders',
-    secret: 'supersecret',
+    mongoUrl: process.env.MONGODB_URL,
+    secret: process.env.SECRET_KEY,
     port: 5000
 }
 
