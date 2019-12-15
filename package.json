@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "test": "mocha --require @babel/register  --timeout=10000 './testcases/**spec.js'"
   },
   "author": "Deepanshu",
   "license": "ISC",
@@ -20,6 +21,11 @@
   "devDependencies": {
     "@babel/core": "^7.7.5",
     "@babel/node": "^7.7.4",
-    "@babel/preset-env": "^7.7.6"
+    "@babel/preset-env": "^7.7.6",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "mocha": "^6.2.2",
+    "sinon": "^7.5.0",
+    "sinon-test": "^2.4.1"
   }
 }

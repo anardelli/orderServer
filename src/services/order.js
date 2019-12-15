@@ -71,22 +71,40 @@ function getOrders(req) {
 }
 
 function calcAmount(req) {
+    console.log('req', req);
     return new Promise((resolve, reject) => {
         orderSchema.aggregate(
             [
                 { $match: { orderId: req.orderId } },
                 { $unwind: "$dishes" },
                 {
-                    $project:
-                    {
-                        averageCost: { $avg: "$dishes.price" }
+                    $group: {
+                        _id: "$_id",
+                        sum: { $sum: "$dishes.price" }
                     }
                 }
             ]
         ).then((data) => {
-            console.log(data);
             resolve(data);
         }).catch((error) => {
+            reject(error);
+        });
+    });
+}
+
+function getOrdersByRestaurant(req) {
+    const date = new Date(req.date);
+    const nextDate = new Date(date.getTime() + 86400000);
+    return new Promise((resolve, reject) => {
+        orderSchema.find(
+            {
+                restaurantId: { $in: req.restaurants },
+                orderedTime: { $gte: date, $lt: nextDate }
+            }
+        ).then((data) => {
+            resolve(data);
+        }).catch((error) => {
+            console.log(error);
             reject(error);
         });
     });
@@ -97,5 +115,6 @@ module.exports = {
     updateOrder,
     cancelOrder,
     getOrders,
-    calcAmount
+    calcAmount,
+    getOrdersByRestaurant
 };

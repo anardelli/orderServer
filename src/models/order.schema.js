@@ -17,8 +17,8 @@ const orderModel = mongoose.Schema({
     },
     dishes: [dish],
     orderedTime: {
-        type: String,
-        required: true
+        type: Date,
+        default: Date.now
     },
     total_amount: {
         type: String,

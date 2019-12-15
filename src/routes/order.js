@@ -11,5 +11,6 @@ router.get('/cost', orderController.calcAmount);
 router.post('/create', orderController.createOrder);
 router.patch('/update', orderController.updateOrder);
 router.patch('/cancel', orderController.cancelOrder);
+router.post('/list', orderController.getOrdersByRestaurant);
 
 module.exports = router;

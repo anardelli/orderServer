@@ -1,12 +1,13 @@
 /**
  * library imports
  */
-require ('dotenv/config');
+require('dotenv/config');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
-console.log('MONGODB URL - ',process.env.MONGODB_URL);
+console.log('enviornment', process.env.NODE_ENV);
+console.log('MONGODB URL - ', process.env.MONGODB_URL);
 
 /**
  * configuration imports
@@ -36,3 +37,5 @@ mongoose.connection.on('error', (error) => {
 app.get('/', (req, res) => {
     res.send('Restaurant Order Server Started');
 });
+
+module.exports = app;
