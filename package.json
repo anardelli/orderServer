@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "mocha --require @babel/register  --timeout=10000 './testcases/**spec.js'"
+    "test": "nyc --reporter=html mocha --require @babel/register  --timeout=10000 './testcases/**spec.js'",
+    "code-coverage": "nyc mocha"
   },
   "author": "Deepanshu",
   "license": "ISC",
@@ -15,6 +16,9 @@
     "express": "^4.17.1",
     "mongoose": "^5.8.0",
     "nodemon": "^2.0.2",
+    "nyc": "^14.1.1",
+    "swagger-jsdoc": "^3.4.0",
+    "swagger-ui-express": "^4.0.7",
     "winston": "^3.2.1",
     "winston-daily-rotate-file": "^4.4.0"
   },

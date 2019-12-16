@@ -1,0 +1,15 @@
+{
+    "info": {
+        "title": "Node Swagger API",
+        "version": "1.0.0",
+        "description": "Swagger API Documentation for restaurant order services"
+    },
+    "host": "localhost:5000",
+    "basePath": "/",
+    "swagger": "2.0",
+    "paths": {},
+    "definitions": {},
+    "responses": {},
+    "parameters": {},
+    "securityDefinitions": {}
+}

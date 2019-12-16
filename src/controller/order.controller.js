@@ -1,6 +1,5 @@
 const Response = require('../response');
 const orderService = require('../services/order');
-const logger = require('../../logger.js');
 
 function getOrders(req,res) {
     const response = new Response();
@@ -9,13 +8,11 @@ function getOrders(req,res) {
         then((result) => {
             response.data.result = result;
             response.status.statusCode = 200;
-            logger.info('orders recieved in controller');
             response.status.message = "recieved all the orders succesfully !";
             res.status(200).json(response);
         }).catch((err) => {
             response.status.statusCode = '500';
             response.status.message = "Unable to get all the order!";
-            logger.error('Unable to recieve the orders');
             res.status(500).json(response);
         });
 }
@@ -31,7 +28,7 @@ function createOrder(req, res) {
             res.status(200).json(response);
         }).catch((err) => {
             response.status.statusCode = '500';
-            response.status.message = "Unable to create the order!";
+            response.status.message = err;
             res.status(500).json(response);
         });
 }
