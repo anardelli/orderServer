@@ -24,6 +24,7 @@ describe('Restaurant', () => {
     //     // });
     // });
     describe('/order', () => {
+        const orderID = Math.random() * 10000;
         let order = {
             "cancelStatus": "false",
             "dishes": [
@@ -40,7 +41,7 @@ describe('Restaurant', () => {
             "status": "placed",
             "restaurantId": "16774318",
             "customerId": "12235",
-            "orderId": "13233"
+            "orderId": orderID
         };
         let updateOrderBody = {
             "dishes": [

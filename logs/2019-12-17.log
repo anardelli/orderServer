@@ -75,3 +75,22 @@ Tue Dec 17 2019 13:25:29 GMT+0930 (Australian Central Standard Time) - error: un
 Tue Dec 17 2019 13:25:50 GMT+0930 (Australian Central Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.131.161:8500
 Tue Dec 17 2019 13:25:55 GMT+0930 (Australian Central Standard Time) - error: uncaughtException: listen EADDRINUSE: address already in use :::5000
 Tue Dec 17 2019 13:26:05 GMT+0930 (Australian Central Standard Time) - error: uncaughtException: listen EADDRINUSE: address already in use :::5000
+Tue Dec 17 2019 13:59:24 GMT+0530 (India Standard Time) - info: recieved all the orders succesfully from controller
+Tue Dec 17 2019 13:59:45 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
+Tue Dec 17 2019 14:01:24 GMT+0530 (India Standard Time) - error: uncaughtException: Cannot read property 'should' of undefined
+Tue Dec 17 2019 14:35:37 GMT+0530 (India Standard Time) - error: uncaughtException: kill ENOSYS
+Tue Dec 17 2019 14:36:04 GMT+0530 (India Standard Time) - info: recieved all the orders succesfully from controller
+Tue Dec 17 2019 14:36:25 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
+Tue Dec 17 2019 14:38:04 GMT+0530 (India Standard Time) - error: uncaughtException: Cannot read property 'should' of undefined
+Tue Dec 17 2019 14:38:32 GMT+0530 (India Standard Time) - error: uncaughtException: listen EADDRINUSE: address already in use :::5000
+Tue Dec 17 2019 14:38:32 GMT+0530 (India Standard Time) - info: recieved all the orders succesfully from controller
+Tue Dec 17 2019 14:38:52 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
+Tue Dec 17 2019 14:41:14 GMT+0530 (India Standard Time) - info: recieved all the orders succesfully from controller
+Tue Dec 17 2019 14:41:35 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
+Tue Dec 17 2019 14:51:30 GMT+0530 (India Standard Time) - error: uncaughtException: kill ENOSYS
+Tue Dec 17 2019 14:53:05 GMT+0530 (India Standard Time) - info: recieved all the orders succesfully from controller
+Tue Dec 17 2019 14:53:26 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
+Tue Dec 17 2019 14:53:58 GMT+0530 (India Standard Time) - error: uncaughtException: kill ENOSYS
+Tue Dec 17 2019 14:54:55 GMT+0530 (India Standard Time) - info: recieved all the orders succesfully from controller
+Tue Dec 17 2019 14:55:16 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
+Tue Dec 17 2019 14:55:35 GMT+0530 (India Standard Time) - error: uncaughtException: kill ENOSYS

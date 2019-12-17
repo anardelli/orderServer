@@ -20,12 +20,16 @@ open.then(function (connection) {
 }).catch(console.warn);
 
 function sendOrderDetails(details) {
-  const message = {
-    provider: 'OrderService',
-    date: new Date(),
-    details: details
+  if (details && notificationChannel) {
+    const message = {
+      provider: 'OrderService',
+      date: new Date(),
+      details: details
+    }
+    notificationChannel.sendToQueue(queueName, Buffer.from(JSON.stringify(message)));
+  } else if (notificationChannel) {
+    notificationChannel.sendToQueue(queueName, Buffer.from('some error occured'));
   }
-  notificationChannel.sendToQueue(queueName, Buffer.from(JSON.stringify(message)));
 }
 
 module.exports = sendOrderDetails;
