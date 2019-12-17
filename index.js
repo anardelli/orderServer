@@ -2,6 +2,8 @@
  * library imports
  */
 require('dotenv/config');
+require('./config/consul');
+require('./src/notification/producer');
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -69,7 +71,7 @@ mongoose.connection.on('error', (error) => {
  *        description: A successful response of server starting
  */
 app.get('/', (req, res) => {
-    res.send('Restaurant Order Server Started');
+    res.send('Restaurant Order Server Started process id is ' + process.pid +' and port is '+ PORT);
 });
 
 module.exports = app;

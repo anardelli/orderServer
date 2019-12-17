@@ -1,5 +1,7 @@
 const Response = require('../response');
 const orderService = require('../services/order');
+const notificationService = require('../notification/producer');
+const logger = require('../../logger');
 
 function getOrders(req,res) {
     const response = new Response();
@@ -8,10 +10,12 @@ function getOrders(req,res) {
         then((result) => {
             response.data.result = result;
             response.status.statusCode = 200;
+            logger.info('recieved all the orders succesfully from controller');
             response.status.message = "recieved all the orders succesfully !";
             res.status(200).json(response);
         }).catch((err) => {
             response.status.statusCode = '500';
+            logger.error("Unable to get all the order! {{In controller}}");
             response.status.message = "Unable to get all the order!";
             res.status(500).json(response);
         });
@@ -25,10 +29,12 @@ function createOrder(req, res) {
             response.data.result = result;
             response.status.statusCode = 200;
             response.status.message = "Order created succesfully !";
+            notificationService(result);
             res.status(200).json(response);
         }).catch((err) => {
+            notificationService(err);
             response.status.statusCode = '500';
-            response.status.message = err;
+            response.status.message = "unable to create order";
             res.status(500).json(response);
         });
 }
