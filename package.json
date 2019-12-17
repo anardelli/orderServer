@@ -7,7 +7,8 @@
     "start": "nodemon --exec babel-node index.js",
     "test": "mocha  --require @babel/register --timeout=10000 './testcases/**spec.js'",
     "build": "babel ./src --out-dir ./dist",
-    "coverage": "nyc --reporter=html mocha --timeout 10000 --require @babel/register './testcases/**spec.js' "
+    "coverage": "nyc --reporter=html mocha --timeout 10000 --require @babel/register './testcases/**spec.js' ",
+    "pm2": "pm2 start ./config/ecosystem.config.js"
   },
   "author": "Deepanshu",
   "license": "ISC",
