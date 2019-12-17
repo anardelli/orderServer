@@ -1,14 +1,10 @@
 var winston = require('winston');
-var fs = require('fs');
 require('winston-daily-rotate-file');
-var path = require('path');
-var logDir = 'logs'
 
 winston.emitErrs = false;
 
 function formatter(args) {
     var dataTimeComponent = new Date();
-    var dateTimeComponents = new Date().toLocaleTimeString('en-us').split(',');
     var logMessage = dataTimeComponent + ' - ' + args.level + ': ' + args.message;
     return logMessage;
 }
