@@ -18,7 +18,7 @@ function fromCallback(fn) {
 }
 const consul = require('consul')({
     promisify: fromCallback,
-    host: '172.21.131.161'
+    host: '172.21.130.161'
 });
 
 
