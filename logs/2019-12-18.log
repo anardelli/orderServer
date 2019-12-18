@@ -25,3 +25,4 @@ Wed Dec 18 2019 15:12:39 GMT+0530 (India Standard Time) - error: uncaughtExcepti
 Wed Dec 18 2019 15:13:00 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
 Wed Dec 18 2019 15:14:48 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
 Wed Dec 18 2019 15:26:36 GMT+0530 (India Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
+Wed Dec 18 2019 19:33:47 GMT+0930 (Australian Central Standard Time) - error: uncaughtException: connect ETIMEDOUT 172.21.130.161:8500
