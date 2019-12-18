@@ -20,6 +20,7 @@ open.then(function (connection) {
 }).catch(console.warn);
 
 function sendOrderDetails(details) {
+  console.log('Sending a message to rabbitMQ');
   if (details && notificationChannel) {
     const message = {
       provider: 'OrderService',
