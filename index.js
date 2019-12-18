@@ -19,28 +19,9 @@ app.use(bodyParser.json());
  */
 require('./config/database');
 
-/**
- * Swagger Config
- */
-const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerUi = require("swagger-ui-express");
-const swaggerOptions = {
-    swaggerDefinition: {
-        info: {
-            title: "Restaurant Order API",
-            description: "Restaurant Order API Information",
-            contact: {
-                name: "Deepanshu Gupta"
-            }
-        },
-        host: 'localhost:5000',
-        basePath: '/order'
-    },
-    apis: ["index.js", "./src/routes/order.js"]
-};
-
-const swaggerDocs = swaggerJsDoc(swaggerOptions);
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+const swaggerDocumentation = require('./swagger.json');
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocumentation));
 
 /**
  * routers imports
@@ -71,7 +52,7 @@ mongoose.connection.on('error', (error) => {
  *        description: A successful response of server starting
  */
 app.get('/', (req, res) => {
-    res.send('Restaurant Order Server Started process id is ' + process.pid +' and port is '+ PORT);
+    res.send('Restaurant Order Server Started process id is ' + process.pid + ' and port is ' + PORT);
 });
 
 module.exports = app;

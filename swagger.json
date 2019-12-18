@@ -1,15 +1,208 @@
 {
+    "swagger": "2.0",
     "info": {
-        "title": "Node Swagger API",
+        "description": "Restaurant API's",
         "version": "1.0.0",
-        "description": "Swagger API Documentation for restaurant order services"
+        "title": "Restaurant Order Management",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "deepanshu.gupta4@mindtree.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
     },
     "host": "localhost:5000",
     "basePath": "/",
-    "swagger": "2.0",
-    "paths": {},
-    "definitions": {},
-    "responses": {},
-    "parameters": {},
-    "securityDefinitions": {}
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/order/create": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Create a order",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "401": {
+                        "description": "unauthorized"
+                    },
+                    "200": {
+                        "description": "success"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/order/cost": {
+            "get": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Calculate total cost of a order",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "401": {
+                        "description": "unauthorized"
+                    },
+                    "200": {
+                        "description": "success"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/order/update": {
+            "patch": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Update the order",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "401": {
+                        "description": "unauthorized"
+                    },
+                    "200": {
+                        "description": "success"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/order/cancel": {
+            "patch": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Cancel the order",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "401": {
+                        "description": "unauthorized"
+                    },
+                    "200": {
+                        "description": "success"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        },
+        "/order/list": {
+            "post": {
+                "tags": [
+                    "Order"
+                ],
+                "summary": "get all orders by restaurant ids",
+                "description": "",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [],
+                "responses": {
+                    "401": {
+                        "description": "unauthorized"
+                    },
+                    "200": {
+                        "description": "success"
+                    },
+                    "500": {
+                        "description": "internal server error"
+                    }
+                }
+            }
+        }
+    },
+    "securityDefinitions": {
+        "token": {
+            "type": "apiKey",
+            "name": "x-access-token",
+            "in": "header"
+        }
+    },
+    "definitions": {
+        "Order": {
+            "type": "object",
+            "properties": {
+                "orderId": {
+                    "type": "string"
+                },
+                "restaurantId": {
+                    "type": "string"
+                },
+                "customerId": {
+                    "type": "string"
+                },
+                "dishes": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "price": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "orderedTime": {
+                    "type": "date"
+                },
+                "total_amount": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string"
+                },
+                "cancelStatus": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "externalDocs": {
+        "description": "Find out more about Swagger",
+        "url": "http://swagger.io"
+    }
 }
