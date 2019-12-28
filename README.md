@@ -1,9 +1,13 @@
 # Order Server
-It is used to manage the orders of a restraurant. 
-This server has API's of create, cancel, get and update the order. 
-It also has API of sum of cost of a order.
-It provides the list of orders based on list of restaurants.
-It also produces messages to restaurant server whenever an order get placed.
+- It is used to manage the orders of a restraurant.
+
+- This server has API's of create, cancel, get and update the order.
+
+- It also has API of sum of cost of a order.
+
+- It provides the list of orders based on list of restaurants.
+
+- It also produces messages to restaurant server whenever an order get placed.
 
 **Clustering, Service Discovery, Messaging using RabbitMQ( AQMP ).**
 
